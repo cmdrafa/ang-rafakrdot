@@ -1,0 +1,15 @@
+@import url('https://fonts.googleapis.com/css?family=Audiowide|Black+Ops+One|Permanent+Marker|Sigmar+One');
+
+.navbar-brand {
+    font-family: 'Black Ops One', cursive;
+    color: white;
+
+}
+
+.active {
+    color: #FFF!;
+  }
+
+  main {
+    padding-top: 20px;
+  }
