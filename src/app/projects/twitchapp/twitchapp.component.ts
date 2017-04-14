@@ -49,11 +49,11 @@ export class TwitchAppComponent implements OnInit {
     }
 
     clearUserList(){
+
         this.streamers = [];
 
-        this.searchUserService.getData(this.streamers)
-        .subscribe(response => this.users.push(response));
-        
+        this.updateList()
+
     }
 
 }
