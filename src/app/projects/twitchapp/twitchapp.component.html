@@ -1,0 +1,40 @@
+<div class="container">
+    <div class="page-header">
+        <h1 class="text-center">twitchApp</h1>
+        <div class='row'>
+            <div class="col-md-4"></div>
+            <div class='col-md-4'>
+                <form>
+                    <input class="useradd form-control text-center" type="text" placeholder="insert username"></form>
+            </div>
+        </div>
+        <p></p>
+        <p class='text-center'><a id="buttonadd" class="btn btn-lg btn-success" href="#" role="button">AddUser</a></p>
+        <p class='text-center'><a id="buttonclear" class="btn btn-lg btn-danger" href="#" role="button">Clear user list</a></p>
+    </div>
+
+</div>
+
+<div class="jumbotron text center">
+    <h1 class="text-center"> Results </h1>
+
+    <div class="user-list row" *ngIf="users">
+
+        <div class="col-sm-4" *ngFor="let user of users">
+            <div class="card" style="width: 20rem;">
+                <img [src]="user.logo" class="card-img-top img-fluid img-thumbnail" alt="{{ user.diplay_name }}">
+                <div class="card-block">
+                    <h4 class="card-title">{{ user.display_name }}</h4>
+                    <p class="card-text"> {{user.status}} </p>
+                    <ul class="list-group list-group-flush">
+                        <li class="list-group-item"> {{user.game}} </li>
+                        <li class="list-group-item"> Viewers: {{user.viewers}}</li>
+                    </ul>
+                    <div class="card-block">
+                        <a href="{{user.url}}" class="card-link btn btn-primary"> Watch it now </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

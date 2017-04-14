@@ -13,10 +13,12 @@ import { UserService } from '../services/user.service';
 export class ProjectsComponent {
     tomatoimagepath: string;
     makeitinyimagepath: string;
+    twitchappimagepath: string;
 
     constructor(){
         this.tomatoimagepath = '/assets/media/tomato_clock.png'
         this.makeitinyimagepath = '/assets/media/makeitiny.png'
+        this.twitchappimagepath = '/assets/media/twitchapp.png'
     }
 
 }

@@ -1,0 +1,38 @@
+import { Component, OnInit } from '@angular/core';
+import { TwitchAppService } from './services/twitchapp.service';
+import { Users } from './models/twitchusers';
+import { Observable } from 'rxjs';
+import { provideRoutes } from '@angular/router';
+
+import 'rxjs/Rx';
+import 'rxjs/add/operator/catch';
+import 'rxjs/add/operator/map';
+
+@Component({
+    selector: 'twitchapp',
+    templateUrl: './twitchapp.component.html',
+    styleUrls: ['./twitchapp.component.css']
+})
+export class TwitchAppComponent implements OnInit {
+    errorMessage: string;
+    streamers = ["ESL_SC2", "OgamingSC2", "cretetion", 
+    "freecodecamp", "storbeck", "habathcx", "RobotCaleb", "noobs2ninjas" ]
+     users: Users[];
+     mode = 'Observable';
+
+    constructor(private searchUserService: TwitchAppService) { }
+
+    ngOnInit() { 
+        this.updateList();
+    }
+
+    updateList() {
+        this.users = new Array<Users>();
+
+        for (var i=0; i<this.streamers.length; i++){
+            this.searchUserService.getData(this.streamers[i])
+            .subscribe(response => this.users.push(response));
+        }
+        console.log(this.users)
+    }
+}

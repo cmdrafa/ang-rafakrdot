@@ -1,0 +1,10 @@
+@import url('https://fonts.googleapis.com/css?family=Baloo');
+
+h1 {
+    font-family: 'Baloo', cursive;
+}
+
+.card {
+    margin: 20px auto;
+}
+

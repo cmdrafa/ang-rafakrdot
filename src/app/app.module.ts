@@ -1,7 +1,7 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { FormsModule } from '@angular/forms';
-import { HttpModule } from '@angular/http';
+import { HttpModule, JsonpModule } from '@angular/http';
 import { provideRoutes} from '@angular/router';
 import { Routes, RouterModule } from '@angular/router';
 
@@ -19,7 +19,13 @@ import { HomeComponent } from './home/home.component';
 import { LoginComponent } from './login/login.component';
 import { RegisterComponent } from './register/register.component';
 import { NotFoundComponent } from './not-found/not-found.component';
-import { ProjectsComponent } from './projects/projects.component'
+import { ProjectsComponent } from './projects/projects.component';
+import { TwitchAppService } from './projects/twitchapp/services/twitchapp.service';
+import { TwitchAppComponent } from './projects/twitchapp/twitchapp.component';
+
+
+
+
 
 
 @NgModule({
@@ -30,13 +36,15 @@ import { ProjectsComponent } from './projects/projects.component'
     LoginComponent,
     RegisterComponent,
     AlertComponent,
-    ProjectsComponent
+    ProjectsComponent,
+    TwitchAppComponent
   ],
   imports: [
     BrowserModule,
     FormsModule,
     HttpModule,
     RouterModule,
+    JsonpModule,
     appRouting
   ],
   providers: [
@@ -44,6 +52,7 @@ import { ProjectsComponent } from './projects/projects.component'
     AuthGuard,
     AlertService,
     AuthenticationService,
+    TwitchAppService,
     UserService
   ],
   bootstrap: [AppComponent]
