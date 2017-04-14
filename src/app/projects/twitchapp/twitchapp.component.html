@@ -4,13 +4,12 @@
         <div class='row'>
             <div class="col-md-4"></div>
             <div class='col-md-4'>
-                <form>
-                    <input class="useradd form-control text-center" type="text" placeholder="insert username"></form>
-            </div>
-        </div>
+                <form #userNameForm="ngForm" ng-submit="addUser(userNameForm)">
+                    <input class="useradd form-control text-center" name="username" id="username" type="text" placeholder="insert username" ngModel>
         <p></p>
-        <p class='text-center'><a id="buttonadd" class="btn btn-lg btn-success" href="#" role="button">AddUser</a></p>
-        <p class='text-center'><a id="buttonclear" class="btn btn-lg btn-danger" href="#" role="button">Clear user list</a></p>
+        <p class='text-center'><button (click)="addUser(userNameForm)" class="btn btn-lg btn-success" role="button" type="submit">AddUser</button></p>
+        <p class='text-center'><button (click)="clearUserList()" class="btn btn-lg btn-danger" role="button">Clear user list</button></p>
+        </form>
     </div>
 
 </div>

@@ -3,6 +3,8 @@ import { TwitchAppService } from './services/twitchapp.service';
 import { Users } from './models/twitchusers';
 import { Observable } from 'rxjs';
 import { provideRoutes } from '@angular/router';
+import { NgForm, ReactiveFormsModule, FormsModule } from '@angular/forms';
+import { platformBrowserDynamic } from '@angular/platform-browser-dynamic';
 
 import 'rxjs/Rx';
 import 'rxjs/add/operator/catch';
@@ -35,4 +37,21 @@ export class TwitchAppComponent implements OnInit {
         }
         console.log(this.users)
     }
+
+    addUser(form: NgForm){
+        
+        let username = form.value.username;
+        //this.streamers.push(username)
+
+        this.searchUserService.getData(username)
+        .subscribe(response => this.users.push(response));
+
+    }
+
+    clearUserList(){
+        this.streamers = [];
+
+        this.updateList();
+    }
+
 }
