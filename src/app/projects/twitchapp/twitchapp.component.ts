@@ -51,7 +51,9 @@ export class TwitchAppComponent implements OnInit {
     clearUserList(){
         this.streamers = [];
 
-        this.updateList();
+        this.searchUserService.getData(this.streamers)
+        .subscribe(response => this.users.push(response));
+        
     }
 
 }
