@@ -21,7 +21,7 @@ export class UserService {
     }
 
     create(user: User) {
-        return this.http.post(this.config.apiUrl + '/addUser', user, this.jwt());
+        return this.http.post(this.config.apiUrl + '/adduser', user, this.jwt());
     }
 
     private jwt() {

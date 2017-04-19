@@ -12,10 +12,10 @@ export class AuthenticationService {
 
 
 
-    login(username: string, password: string) {
-        console.log(username + " " + password);
+    login(email: string, password: string) {
+        console.log(email + " " + password);
         return this.http.post(this.config.apiUrl + '/authenticate', 
-        { username: username, password: password }).map((response: Response) => {
+        { email: email, password: password }).map((response: Response) => {
             let user = response.json();
             if (user && user.token) {
                 console.log('Token: ' + user.token)
