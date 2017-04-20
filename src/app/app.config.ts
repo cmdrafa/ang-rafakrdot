@@ -1,3 +1,3 @@
 export class AppConfig {
-    public readonly apiUrl = 'http://localhost:4000/authapi';
+    public readonly apiUrl = 'https://rafakr.cf/authapi';
 }
